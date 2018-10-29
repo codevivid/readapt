@@ -1,0 +1,47 @@
+{
+  "name": "readapt",
+  "version": "1.1.0",
+  "description": "Minimize boilerplate code in React/Redux development.",
+  "main": "./lib/index.js",
+  "module": "./src/index.js",
+  "files": ["dist","lib","src"],
+  "scripts": {
+    "build-browser-min": "babel-minify dist/readapt.js --out-file dist/readapt.min.js --mangle.keepClassName",
+    "build-browser": "rollup src/index.js --file dist/readapt.js --format iife --name readapt",
+    "build-cjs": "babel src --out-dir lib",
+    "build": "npm run build-cjs && npm run build-browser && npm run build-browser-min"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codevivid/readapt.git"
+  },
+  "keywords": [
+    "react",
+    "redux",
+    "react-redux"
+  ],
+  "author": "Andy Li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codevivid/readapt/issues"
+  },
+  "homepage": "https://github.com/codevivid/readapt#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-minify": "^0.5.0",
+    "babel-plugin-transform-es2015-arrow-functions": "^6.22.0",
+    "babel-plugin-transform-es2015-block-scoping": "^6.26.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+    "babel-plugin-transform-es2015-shorthand-properties": "^6.24.1",
+    "rollup": "^0.66.6",
+    "uglify-js": "^3.4.9"
+  },
+  "dependencies": {
+    "react": "^16.6.0",
+    "redux": "^4.0.1",
+    "react-redux": "^5.1.0",
+    "prop-types": "^15.6.2",
+    "redux-devtools-extension": "^2.13.5"
+  }
+}
