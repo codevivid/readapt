@@ -26,5 +26,5 @@ function errorPayloadNotObject(action, name){
 }
 
 function errorPayloadPropertyMissing(action, name){
-  return new Error('The dispatched action with type "'+action.type+'" has no payload property named "' + name +'"');
+  return new Error('The dispatched action with type "'+action.type+'" has undefined payload property named "' + name +'"');
 }
