@@ -126,10 +126,9 @@ class List extends Component {
 
 /*
   args:
-  1) the connect function
-  2) names of state items the component needs
-  3) names of actions the component will dispatch
-  4) the component itself
+  1) names of state items
+  2) names of actions 
+  3) the component itself
 */
 List = connect(['list','currentItem'], ['toggleItem'], List);
 export default List;
@@ -204,7 +203,7 @@ import { reducer } from 'readapt';
 
 let list = {};
 
-list.initData (state, action)=>{
+list.initData = (state, action)=>{
   return action.payload;
 }
 
